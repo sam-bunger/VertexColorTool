@@ -404,7 +404,7 @@ def _parse_color_attribute(bm: BMesh,
 
 	layers = bm.loops.layers if is_corner_attribute else bm.verts.layers
 	col_layers = layers.color if is_byte_color else layers.float_color
-	return (col_layers.active, is_corner_attribute, is_byte_color)
+	return (col_layers[color_attribute.name], is_corner_attribute, is_byte_color)
 
 
 def _get_average_color(elems: list[BMVert] | list[BMLoop] | BMVertSeq | BMElemSeq, active_layer: BMLayerItem) -> Vector:
